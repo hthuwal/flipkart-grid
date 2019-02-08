@@ -179,3 +179,15 @@ def tsne(X=np.array([]), no_dims=2, initial_dims=50, perplexity=30.0):
 
     # Return solution
     return Y
+
+
+if __name__ == "__main__":
+    print("Loading Images")
+    X = np.loadtxt("images.txt")
+    X = normalize(X, axis=0)
+    print("Loading Names")
+    names = np.loadtxt("names.txt", dtype=str)
+    Y = tsne(X, 2, 50, 20.0)
+    pickle.dump([Y, names], open("2d-data.pickle", "wb"))
+    pylab.scatter(Y[:, 0], Y[:, 1], 20)
+    pylab.savefig('plot.png')
