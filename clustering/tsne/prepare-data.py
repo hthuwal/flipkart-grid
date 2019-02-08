@@ -1,6 +1,6 @@
 """Conform data for tsne script
 
-Read every image in tarin_dir and creates two files
+Read every image in train_dir and creates two files
 
 1. image.txt
     - Each line corresponds to a flattened version of each image (resized to 24x24)
