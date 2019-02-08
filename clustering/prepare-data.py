@@ -17,8 +17,10 @@ import sys
 
 train_dir = sys.argv[1]
 
+if not os.path.exists("data"):
+    os.makedirs("data")
 
-with open("images.txt", "w") as imgs, open("names.txt", "w") as names:
+with open("data/images.txt", "w") as imgs, open("data/names.txt", "w") as names:
     files = os.listdir(train_dir)
     for file in tqdm(files, total=len(files), ascii=True):
         _, ext = os.path.splitext(file)
