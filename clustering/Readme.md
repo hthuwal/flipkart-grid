@@ -19,7 +19,7 @@ t-Distributed Stochastic Neighbor Embedding (t-SNE) is a (prize-winning) techniq
  
 ## Clustering
 
-### K-mean
+### K-means
 
 - On 24x24 Grayscale Image
     + Find Optimum K  
@@ -29,9 +29,11 @@ t-Distributed Stochastic Neighbor Embedding (t-SNE) is a (prize-winning) techniq
     + Find Optimum K  
         ![](results/kmeans-2d-tsne.png)
 
-Based on above two plots will do clustering with K=30 and label accordingly.
+- Based on above two plots will do clustering with K=30 and label accordingly.
 
+- Class Distribution after clustering.
 
+    ![](results/cluster-distribution.png)
 
 ### DBSCAN 
 
