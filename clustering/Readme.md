@@ -14,7 +14,8 @@ t-Distributed Stochastic Neighbor Embedding (t-SNE) is a (prize-winning) techniq
         2. names.txt
             - Each line corresponds to the name of the file
 
-## Clusetering
+- No benefit. 2D projection shows no clustering at all
+    ![](results/2d-tsne-plot.png)
  
 ### DBSCAN 
 
