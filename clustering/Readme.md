@@ -31,3 +31,10 @@ t-Distributed Stochastic Neighbor Embedding (t-SNE) is a (prize-winning) techniq
         2: 5
     }
     ```
+- On 2d-tsne data
+    + Use `eps = 3`
+        * 8 clusters with 13812 belonging to just one cateogry. :unamused:
+        * Won't make any difference.
+
+    + Use `eps = 1`
+        * 643 Cluster :astonished:
