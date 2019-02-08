@@ -3,7 +3,8 @@
 t-Distributed Stochastic Neighbor Embedding (t-SNE) is a (prize-winning) technique for dimensionality reduction
 
 - tsne/tsne.py   
-    [Source](https://lvdmaaten.github.io/tsne/)
+    - ~[Old Source](https://lvdmaaten.github.io/tsne/)~
+    - Now using sklearn's inbuilt function
 
 - tsne/prepare-data.py
     - Conform data for tsne script
