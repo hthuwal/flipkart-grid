@@ -1,22 +1,3 @@
-"""Conform Data to yolov3 Format
-
-Assumption:
-    - All Images Present in source_dir
-    - A training.csv file with each row depicting the following
-        - Image_Name,x1,x2,y1,y2
-            - Here x1, y1 and x2, y2 are bottom left and top right coordinates
-            of the bounding box in the image
-
-Moves the trainig images as per training.csv fro source_dir to
-train_dir and creates a txt file corresponding to each image with containing
-`class x y w h`
-
-Note that (x,y) and (w,h) are coordinates and dimensions of the bounding
-box relative to width and height of the entire image.
-
-"""
-
-
 import csv
 import os
 from tqdm import tqdm
