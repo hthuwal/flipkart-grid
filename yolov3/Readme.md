@@ -9,6 +9,8 @@
     + Hence no SGD Burn In.
 - Added Progress Bars during Training and Testing.
     + Results are shown only after each epoch.
+- The output is now of the form
+    `x1 x2 y1 y2`
 
 ### Description
 
