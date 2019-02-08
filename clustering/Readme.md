@@ -14,3 +14,19 @@ t-Distributed Stochastic Neighbor Embedding (t-SNE) is a (prize-winning) techniq
         2. names.txt
             - Each line corresponds to the name of the file
 
+## Clusetering
+ 
+### DBSCAN 
+
+- On 24x24 Grayscale Image
+    + **Failed!!**
+    + 3 clusters.
+    + 13984 / 14000 points are outliers. :joy:
+    ```python
+    {   
+        -1: 13984, 
+        0: 6, 
+        1: 5, 
+        2: 5
+    }
+    ```
