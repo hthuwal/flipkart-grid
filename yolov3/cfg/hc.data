@@ -1,0 +1,6 @@
+classes=1
+train=hc/train.txt
+valid=hc/valid.txt
+names=hc/hc.names
+backup=backup/
+eval=hc
