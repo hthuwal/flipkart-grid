@@ -17,6 +17,22 @@ t-Distributed Stochastic Neighbor Embedding (t-SNE) is a (prize-winning) techniq
 - No benefit. 2D projection shows no clustering at all
     ![](results/2d-tsne-plot.png)
  
+## Clustering
+
+### K-mean
+
+- On 24x24 Grayscale Image
+    + Find Optimum K  
+        ![](results/kmeans-24.png)
+
+- On 2d-TSNE projection
+    + Find Optimum K  
+        ![](results/kmeans-2d-tsne.png)
+
+Based on above two plots will do clustering with K=30 and label accordingly.
+
+
+
 ### DBSCAN 
 
 - On 24x24 Grayscale Image
