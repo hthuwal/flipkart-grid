@@ -30,5 +30,5 @@ if __name__ == "__main__":
 
     pickle.dump([Y, names], open("results/2d-tsne-data.pickle", "wb"))
     pylab.clf()
-    pylab.scatter(Y[:, 0], Y[:, 1], 10)
+    pylab.scatter(Y[:, 0], Y[:, 1], s=1)
     pylab.savefig('results/2d-tsne-plot.png')
