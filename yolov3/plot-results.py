@@ -6,6 +6,8 @@ import sys
 titles = ["xloss", "yloss", "wloss", "hloss", "cnfloss", "clsloss", "lossloss", "maPvalid", "Pvalid", "Rvalid"]
 
 results_file = sys.argv[1]
+plot_file = sys.argv[2]
+
 results = np.loadtxt(results_file, dtype=str)
 results = np.delete(results, [1, 9, 10, 11, 12, 13, 14, 15], axis=1).astype(float)
 epochs = results[:, 0]
@@ -21,4 +23,4 @@ for i in range(len(titles)):
     plt.plot(epochs, results[:, i], color=colors[i], label=titles[i])
     plt.legend()
 
-plt.savefig("plots/test.png", dpi=my_dpi)
+plt.savefig(plot_file, dpi=my_dpi)
