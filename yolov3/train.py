@@ -190,7 +190,7 @@ def train(
 
         print("Testing on Validation Set:")
         # Calculate mAP
-        mAP, R, P = test.test(
+        mAP, R, P, mean_iou = test.test(
             net_config_path,
             data_config_path,
             latest_weights_file,
@@ -200,7 +200,7 @@ def train(
 
         # Write epoch results
         with open('results/results.txt', 'a') as file:
-            file.write(s + '%11.3g' * 3 % (mAP, P, R) + '\n')
+            file.write(s + '%11.3g' * 4 % (mAP, P, R, mean_iou) + '\n')
 
 
 if __name__ == '__main__':

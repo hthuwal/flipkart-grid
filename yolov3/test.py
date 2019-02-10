@@ -49,6 +49,7 @@ def test(
     outputs, mAPs, mR, mP, TP, confidence, pred_class, target_class = [], [], [], [], [], [], [], []
     AP_accum, AP_accum_count = np.zeros(nC), np.zeros(nC)
 
+    mean_iou = 0
     for batch_i, (imgs, targets) in tqdm(enumerate(dataloader), ascii=True, total=len(dataloader)):
 
         with torch.no_grad():
@@ -88,6 +89,7 @@ def test(
                     iou = bbox_iou(pred_bbox, target_boxes)
                     # Extract index of largest overlap
                     best_i = np.argmax(iou)
+                    mean_iou += iou[best_i]
                     # If overlap exceeds threshold and classification is correct mark as correct
                     if iou[best_i] > iou_thres and obj_pred == labels[best_i, 0] and best_i not in detected:
                         correct.append(1)
@@ -118,13 +120,13 @@ def test(
 
     # Print mAP per class
     # print('%11s' * 5 % ('Image', 'Total', 'P', 'R', 'mAP') + '\n\nmAP Per Class:')
-
+    mean_iou = mean_iou / len(dataloader)
     classes = load_classes(data_config['names'])  # Extracts class labels from file
     for i, c in enumerate(classes):
-        print('%15s: %-.4f' % (c, AP_accum[i] / AP_accum_count[i]))
+        print('%15s: %-.4f %-.4f' % (c, AP_accum[i] / AP_accum_count[i], mean_iou))
 
     # Return mAP
-    return mean_mAP, mean_R, mean_P
+    return mean_mAP, mean_R, mean_P, mean_iou
 
 
 if __name__ == '__main__':
