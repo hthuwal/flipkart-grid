@@ -33,7 +33,7 @@ Flipkart GRiD – Te[a]ch The Machines | 2019
     - Default Everything: 416x416
         + 88.812 Test Score Around 65th Epoch
         + 98 mAP on Validation
-        - [Training-plots](plots/plot-1-416.pdf) 
+        - [Training-plots](yolov3/plots/plot-1-416.pdf) 
 
     - Default + Custom Anchor Points
         + ~85 Percent Test Score
@@ -48,9 +48,9 @@ Flipkart GRiD – Te[a]ch The Machines | 2019
 
 2. Yolov3: 30 Classes (K Mean Clustering)
     - 40 Training Epochs: 74.52 Test Score
-    - [Training-plots](plots/plot-30-416.pdf) 
+    - [Training-plots](yolov3/plots/plot-30-416.pdf) 
 
 3. Yolov3: 10 Classes (K Mean Clustering)
     - 50 Training Epochs: 79.9338 %
     - 70 Training Epochs: 81.798 %
-    - [Training-plots](plots/plot-10-416.pdf) 
+    - [Training-plots](yolov3/plots/plot-10-416.pdf) 
