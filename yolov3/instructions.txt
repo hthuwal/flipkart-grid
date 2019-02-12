@@ -1,0 +1,47 @@
+## Train Yolov3 from scratch + Only one class
+
+### Install Required libraries
+
+```bash
+pip install -r requirements.txt
+```
+
+### Preprocessing Data
+
+- Extract the images.zip into folder `hc`.   
+- Copy `training.csv` and `test.csv` into `hc`   
+- Create folders `train` and `test` inside `hc`   
+- The folder structure should look like
+
+    ```bash
+    hc
+    ├── images
+    ├── train
+    ├── test
+    ├── test.csv
+    ├── training.csv
+    ```
+- Run `python re-organize-yolo.py`   
+    - This will move the training images and test images to `hc/train` and `hc/test` respectively and simultaneously create the image_name.txt files for the training images required by yolo for prediction.
+
+### Training
+
+```bash
+python train.py --data-config cfg/hc.data --cfg cfg/yolov3.cfg --batch-size 10 --epochs 65
+```
+
+### Predicting
+
+```bash
+python detect.py --cfg cfg/yolov3.cfg --data-config cfg/hc.data --weights \
+weights/best.pt --image-folder hc/test --output-folder hc/predictions \
+--txt-out True
+```
+
+The above command will produce several .txt files for each text image.
+
+To consolidate results into one csv run:
+
+```bash
+python consolidate-predictions.py
+```

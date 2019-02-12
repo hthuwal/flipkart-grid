@@ -7,7 +7,7 @@ Assumption:
             - Here x1, y1 and x2, y2 are bottom left and top right coordinates
             of the bounding box in the image
 
-Moves the trainig images as per training.csv fro source_dir to
+Moves the trainig images as per training.csv from source_dir to
 train_dir and creates a txt file corresponding to each image with containing
 `class x y w h`
 
@@ -25,6 +25,11 @@ from PIL import Image
 
 source_dir = "hc/images"
 train_dir = "hc/train"
+test_dir = "hc/test"
+
+print("Moving Train Data...")
+if not os.path.exists(train_dir):
+    os.makedirs(train_dir)
 
 with open("hc/training.csv") as f:
     reader = csv.reader(f)
@@ -46,4 +51,17 @@ with open("hc/training.csv") as f:
 
         shutil.move(sf, tf)
         with open(af, "w") as annot:
-            annot.write("wtf {} {} {} {}".format(x, y, width, height))
+            annot.write("0 {} {} {} {}".format(x, y, width, height))
+
+print("Moving Test Data...")
+if not os.path.exists(test_dir):
+    os.makedirs(test_dir)
+
+with open("hc/test.csv") as f:
+    reader = csv.reader(f)
+    next(reader)
+    for row in tqdm(reader, total=12815):
+        image = row[0]
+        sf = os.path.join(source_dir, image)
+        tf = os.path.join(test_dir, image)
+        shutil.move(sf, tf)
