@@ -29,6 +29,8 @@ Flipkart GRiD – Te[a]ch The Machines | 2019
 
 #### Results
 
+Shortlisted for next Round :sunglasses: :heart_eyes: :yum:
+
 1. Yolov3: Only 1 Class
     - Default Everything: 416x416
         + 88.812 Test Score Around 65th Epoch
