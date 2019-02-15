@@ -34,7 +34,7 @@ if not os.path.exists(train_dir):
 with open("hc/training.csv") as f:
     reader = csv.reader(f)
     next(reader)
-    for row in tqdm(reader, total=14000):
+    for row in tqdm(reader, ascii=True, total=14000):
         image = row[0]
         x1, x2, y1, y2 = list(map(int, row[1:]))
         sf = os.path.join(source_dir, image)
@@ -60,7 +60,7 @@ if not os.path.exists(test_dir):
 with open("hc/test.csv") as f:
     reader = csv.reader(f)
     next(reader)
-    for row in tqdm(reader, total=12815):
+    for row in tqdm(reader, ascii=True, total=12815):
         image = row[0]
         sf = os.path.join(source_dir, image)
         tf = os.path.join(test_dir, image)
