@@ -56,3 +56,13 @@ Shortlisted for next Round :sunglasses: :heart_eyes: :yum:
     - 50 Training Epochs: 79.9338 %
     - 70 Training Epochs: 81.798 %
     - [Training-plots](yolov3/plots/plot-10-416.pdf) 
+
+## Level 3
+
+- Same Dataset
+- Larger Number of Training and Test Images with update bboxes seems to be the oly difference.
+
+## Yolov3
+
+- Pretrained
+    + 31 epochs: 87.1057 Test Score
